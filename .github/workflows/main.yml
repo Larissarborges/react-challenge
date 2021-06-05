@@ -1,0 +1,74 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+env:
+  API_TOKEN: ${{ secrets.API_TOKEN }}
+  VERSION: "1.0.0"
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    env:
+      API_TOKEN: ${{ secrets.API_TOKEN }}
+      VERSION: "2.0.0"
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: yarn
+    - name: Build
+      run: yarn build
+      env:
+        API_TOKEN: ${{ secrets.API_TOKEN }}
+        VERSION: "3.0.0"
+        
+#     - name: Deploy to gh-pages
+#       uses: peaceiris/actions-gh-pages@v3
+#       with:
+#         deploy_key: ${{ secrets.API_TOKEN }}
+#         publish_dir: ./build
+#       env:
+#         API_TOKEN: ${{ secrets.API_TOKEN }}
+#         VERSION: "7.0.0"
+        
+#     - name: Deploy
+#       uses: crazy-max/ghaction-github-pages@v2
+#       with:
+#         target_branch: gh-pages
+#         build_dir: build
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+        
+        
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+#         BRANCH: gh-pages
+#         FOLDER: build
+#       env:
+#         API_TOKEN: ${{ secrets.API_TOKEN }}
+#         VERSION: "4.0.0"
+
+    - name: Deploy
+      run: |
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${REACT_APP_API_TOKEN}@github.com/${repository}
+        yarn deploy
+      env:
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        REACT_APP_API_TOKEN: ${{ secrets.API_TOKEN }}
+        repository: ${{ github.repository }}
+        REACT_APP_VERSION: "6.0.0"

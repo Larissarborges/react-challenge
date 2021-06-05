@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  publish="/build"
+  base = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+
+[context.production.environment]
+  API_TOKEN = "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"
+  VERSION = "1.0.0"
