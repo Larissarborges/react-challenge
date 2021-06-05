@@ -1,12 +1,12 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
-import { Avatar } from '../Avatar';
+import { Avatar } from '../../Avatar';
 
 import { Card } from './styles';
 
-import { IGithubFollow } from '../../services/types';
+import { IGithubFollow } from '../../../services/types';
 
-export function Follower({ avatar_url, login, onclick }: IGithubFollow) {
+export function User({ avatar_url, login, onclick }: IGithubFollow) {
   return (
     <Card onClick={onclick}>
       <div>

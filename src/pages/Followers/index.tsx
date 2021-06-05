@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { PageContainer } from '../../components/PageContainer';
 import { Header } from '../../components/Header';
-import { Follower } from '../../components/Follower';
+import { User } from '../../components/cards/User';
 import CentralizedLoader from '../../components/Loader/CentralizedLoader';
 
 import { Divisor } from './styles';
@@ -43,7 +43,7 @@ export function Followers() {
           <PageContainer>
             {gitFollowers.map((follower, index) => (
               <div key={index} >
-                <Follower
+                <User
                   avatar_url={follower.avatar_url}
                   login={follower.login}
                   onclick={() => handleFollowerInfo(follower.login)}

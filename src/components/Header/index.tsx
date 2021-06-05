@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
-import { HeaderContainer } from "../HeaderContainer";
+import { HeaderContainer } from "./HeaderContainer";
 
 import { Wrapper } from "./styles";
 

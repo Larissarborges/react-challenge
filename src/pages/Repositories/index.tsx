@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 
-import { HeaderContainer } from '../../components/HeaderContainer';
+import { HeaderContainer } from '../../components/Header/HeaderContainer';
 import { PageContainer } from '../../components/PageContainer';
-import { Repository } from '../../components/Repository';
+import { Repository } from '../../components/cards/Repository';
 import CentralizedLoader from '../../components/Loader/CentralizedLoader';
 
 import { Wrapper, Divisor } from './styles';

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Container } from './styles'
 
-import { PageContainer } from "../PageContainer"
+import { PageContainer } from "../../PageContainer"
 
 interface HeaderContainerProps {
   children: ReactNode;

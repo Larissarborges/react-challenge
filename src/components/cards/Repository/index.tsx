@@ -3,7 +3,7 @@ import { FiUnlock, FiLock } from 'react-icons/fi';
 
 import { Card, IconsWrapper } from "./styles";
 
-import { IGithubRepos } from '../../services/types'
+import { IGithubRepos } from '../../../services/types'
 
 export function Repository({ description, name, stargazers_count }: IGithubRepos ) {
   return (

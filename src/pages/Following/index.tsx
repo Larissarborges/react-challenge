@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { PageContainer } from '../../components/PageContainer';
-import { Follower } from '../../components/Follower';
+import { User } from '../../components/cards/User';
 import { Header } from '../../components/Header';
 import CentralizedLoader from '../../components/Loader/CentralizedLoader';
 
@@ -43,7 +43,7 @@ export function Following() {
           <PageContainer>
             {gitFollowing.map((following, index) => (
               <div key={index}>
-                <Follower 
+                <User 
                   avatar_url={following.avatar_url}
                   login={following.login}
                   onclick={() => handleFollowingInfo(following.login)} 

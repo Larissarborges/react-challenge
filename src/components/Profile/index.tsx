@@ -1,6 +1,6 @@
 import { FiLogOut, FiLogIn } from 'react-icons/fi';
 
-import { HeaderContainer } from '../HeaderContainer';
+import { HeaderContainer } from '../Header/HeaderContainer';
 import { PageContainer } from '../PageContainer';
 import { Avatar } from '../Avatar';
 
