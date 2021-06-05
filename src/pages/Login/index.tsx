@@ -23,7 +23,7 @@ export function Login() {
 
   useEffect(() => {
     if(!username){
-      setInvalidUsernameMsg('Usuario invalido');
+      setInvalidUsernameMsg('Usuário inválido');
     } else {
       setInvalidUsernameMsg('');  
     }
