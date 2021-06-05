@@ -44,9 +44,9 @@ export function Login() {
       })
       .catch((error) => {
         if(error.message.includes("401")){
-          setInvalidUsernameMsg('Usuario nao autorizado');
+          setInvalidUsernameMsg('Usuário não autorizado');
         }else {
-          setInvalidUsernameMsg('Usuario invalido');
+          setInvalidUsernameMsg('Usuário inválido');
         }
         console.log(JSON.stringify(error));
         setIsSubmitted(false);
